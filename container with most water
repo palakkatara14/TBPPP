@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main{
+    public static int maxArea(int[] height) {
+        int start=0;
+        int end=height.length-1;
+        int maxWater=0;
+        for(int i=0;i<height.length;i++){
+            int min=Math.min(height[start],height[end]);
+            int width=end-start;
+            int water=min*width;
+            if(height[start]<height[end]){
+                start++;
+            }
+            else{
+                end--;
+            }
+            maxWater=Math.max(maxWater,water);
+        }
+        return maxWater;
+    }
+   public static void main(String[] args){
+      Scanner sc=new Scanner(System.in);
+       int n=sc.nextInt();
+       int[] height=new int[n];
+       for(int i=0;i<n;i++){
+         height[i]=sc.nextInt();
+       }
+       System.out.println(maxArea(height));
+
+    }
+
+}
