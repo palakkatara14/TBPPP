@@ -1,0 +1,29 @@
+import java.util.*;
+public class Main{
+    public static int reverse(int x) {
+        long sum=0;
+        int r;
+        while(x!=0){
+           r=x%10;
+           sum=sum*10+r;
+           x=x/10;
+           
+       
+        
+            if(sum>Integer.MAX_VALUE ||sum <Integer.MIN_VALUE){
+                return 0;
+            }
+        }
+        return (int)sum;
+
+        
+    }
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    int x=sc.nextInt();
+    System.out.println(reverse(x));
+
+    }
+    
+    
+}
